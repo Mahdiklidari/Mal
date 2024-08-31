@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منوی تاییدیه</title>
+    <title>Hamster key</title>
     <style>
         body {
             display: flex;
@@ -64,24 +64,9 @@
         function verifyCode() {
             const userCode = document.getElementById("codeInput").value;
             if (userCode === correctCode) {
-                localStorage.setItem("verified", "true");
-                localStorage.setItem("verificationTime", new Date().getTime());
                 window.location.href = "https://mahdiklidari.github.io/Hamster-key/";
             } else {
                 alert("کد تاییدیه اشتباه است.");
-            }
-        }
-
-        window.onload = function() {
-            const verified = localStorage.getItem("verified");
-            const verificationTime = localStorage.getItem("verificationTime");
-            const currentTime = new Date().getTime();
-            const oneDay = 24 * 60 * 60 * 1000;
-
-            if (verified === "true" && (currentTime - verificationTime) < oneDay) {
-                setTimeout(() => {
-                    window.location.href = "https://mahdiklidari.github.io/Hamster-key/";
-                }, 3000); // تأخیر ۳ ثانیه‌ای
             }
         }
     </script>
