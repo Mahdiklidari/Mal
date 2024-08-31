@@ -70,17 +70,45 @@
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease-in-out;
         }
 
         .overlay-content input {
             margin: 10px 0;
             padding: 10px;
             width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
         .overlay-content button {
             margin: 10px;
             padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .overlay-content button:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -91,7 +119,7 @@
             <a href="https://t.me/PhoenixofBlack" target="_blank"><button>عضویت در گروه</button></a>
             <input type="text" id="verificationCode" placeholder="کد را وارد کنید">
             <button onclick="verifyCode()">تایید</button>
-            <p id="errorMessage" class="hidden">کد اشتباه است</p>
+            <p id="errorMessage" class="error-message hidden">کد اشتباه است</p>
         </div>
     </div>
 
