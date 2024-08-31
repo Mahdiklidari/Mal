@@ -118,7 +118,7 @@
             <p>برای استفاده از این سایت باید عضو گروه پشتیبانی باشید و کدی که درون گروه است را در اینجا وارد کنید.</p>
             <a href="https://t.me/PhoenixofBlack" target="_blank"><button>عضویت در گروه</button></a>
             <input type="text" id="verificationCode" placeholder="کد را وارد کنید">
-            <button onclick="verifyCode()">تایید</button>
+            <button id="verifyButton">تایید</button>
             <p id="errorMessage" class="error-message hidden">کد اشتباه است</p>
         </div>
     </div>
@@ -206,6 +206,8 @@
         const correctCode = "5664";
         const userIP = "user_ip"; // Replace with actual IP fetching logic
 
+        document.getElementById("verifyButton").addEventListener("click", verifyCode);
+
         function verifyCode() {
             const enteredCode = document.getElementById("verificationCode").value;
             if (enteredCode === correctCode) {
@@ -225,7 +227,7 @@
             const storedIP = localStorage.getItem("userIP");
 
             if (verified && storedIP === userIP) {
-                const currentTime = new Date().getTime();
+                                const currentTime = new Date().getTime();
                 const timeDifference = currentTime - verificationTime;
                 const hoursDifference = timeDifference / (1000 * 60 * 60);
 
