@@ -79,7 +79,9 @@
             const oneDay = 24 * 60 * 60 * 1000;
 
             if (verified === "true" && (currentTime - verificationTime) < oneDay) {
-                window.location.href = "https://mahdiklidari.github.io/Hamster-key/";
+                setTimeout(() => {
+                    window.location.href = "https://mahdiklidari.github.io/Hamster-key/";
+                }, 3000); // تأخیر ۳ ثانیه‌ای
             }
         }
     </script>
